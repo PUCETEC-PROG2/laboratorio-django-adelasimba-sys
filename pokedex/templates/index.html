@@ -13,10 +13,13 @@
             <ul class="list-group">
                 {% for pokemon in pokemons %}
                 <li class="list-group-item">
-                    <a href="{{pokemon}}">{{ pokemon | capfirst }}</a>
+                    <a href="/pokedex/{{ pokemon.id }}/">{{ pokemon.name|capfirst }}</a>
                 </li>
                 {% endfor %}
             </ul>
+            <div class="text-center mt-4">
+                <a href="/pokedex/entrenadores/" class="btn btn-success">Ver Entrenadores</a>
+            </div>
         </div>
     </body>
 </html>
