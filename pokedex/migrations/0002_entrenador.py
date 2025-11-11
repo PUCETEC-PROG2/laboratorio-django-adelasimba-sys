@@ -10,14 +10,10 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.CreateModel(
-            name='Entrenador',
-            fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('nombre', models.CharField(max_length=50)),
-                ('apellido', models.CharField(max_length=50)),
-                ('nivel', models.IntegerField()),
-                ('fecha_nacimiento', models.DateField()),
-            ],
+        migrations.AddField(
+            model_name='pokemon',
+            name='picture',
+            field=models.ImageField(blank=True, null=True, upload_to='pokemons/'),
+            
         ),
     ]
