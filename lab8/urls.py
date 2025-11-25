@@ -4,10 +4,15 @@ from . import settings
 from django.urls import path, include
 from django.shortcuts import redirect
 
+
+
 urlpatterns = [
+    path('', include('pokedex.urls')),
     path('admin/', admin.site.urls),
-    path('pokedex/', include('pokedex.urls')),
     path('', lambda request: redirect('/pokedex/')),
+    path('accounts/', include('django.contrib.auth.urls')),
+
+
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
