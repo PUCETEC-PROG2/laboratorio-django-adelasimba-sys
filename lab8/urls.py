@@ -2,15 +2,14 @@ from django.contrib import admin
 from django.conf.urls.static import static
 from . import settings
 from django.urls import path, include
-from django.shortcuts import redirect
-
 
 
 urlpatterns = [
     path('', include('pokedex.urls')),
     path('admin/', admin.site.urls),
-    path('', lambda request: redirect('/pokedex/')),
+    path('pokedex/', include('pokedex.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
+    path('api/', include('api.urls')),
 
 
 ]
