@@ -2,6 +2,8 @@ from django.contrib import admin
 from django.conf.urls.static import static
 from . import settings
 from django.urls import path, include
+from oauth2_provider import urls as oauth2_urls
+
 
 
 urlpatterns = [
@@ -10,6 +12,7 @@ urlpatterns = [
     path('pokedex/', include('pokedex.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
     path('api/', include('api.urls')),
+    path('o/', include(oauth2_urls)),
 
 
 ]
