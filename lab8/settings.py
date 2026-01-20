@@ -146,6 +146,10 @@ LOGIN_URL= "pokedex:login"
 CORS_ALLOW_ALL_ORIGINS = True
 
 OAUTH2_PROVIDER = {
+    'SCOPES': {
+        'read': 'Lectura de datos',
+        'write': 'Modificación de datos POST, PUT, DELETE',
+    }
 }
 
 AUTHENTICATION_BACKENDS = (

@@ -18,6 +18,7 @@ class PokemonViewSet(viewsets.ModelViewSet):
 class TrainerViewSet(viewsets.ModelViewSet):
     queryset = Trainer.objects.all()
     serializer_class = TrainerSerializer
+    authentication_classes = [OAuth2Authentication]
     required_scopes = ['write']
 
     def get_permissions(self):
